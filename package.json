@@ -1,0 +1,18 @@
+{
+  "name": "node-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "firstnode.js",
+  "scripts": {
+    "devStart": "nodemon routing.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
