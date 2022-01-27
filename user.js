@@ -6,7 +6,9 @@ const users = [
   
       name: "fredrico",
   
-      email: "fredrico@gmail.com"
+      email: "fredrico@gmail.com",
+
+      position: "CM"
   
     },
   
@@ -16,7 +18,9 @@ const users = [
   
       name: "bruno",
   
-      email: "bruno@gmail.com"
+      email: "bruno@gmail.com",
+
+      position: "AM"
   
     },
   
@@ -26,7 +30,9 @@ const users = [
   
       name: "mata",
   
-      email: "mata@gmail.com"
+      email: "mata@gmail.com",      
+
+      position: "AM"
   
     },
   
@@ -36,7 +42,9 @@ const users = [
   
       name: "pogba",
   
-      email: "pogba@gmail.com"
+      email: "pogba@gmail.com",
+
+      position: "CM"
   
     }
   

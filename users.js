@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const uuid = require("uuid");
 
-let users = require("./users");
+let users = require("./user");
 
 router.get("/", (req, res) => {
   res.json(users);
@@ -14,17 +14,23 @@ router.get("/:id", (req, res) => {
   if (found) {
     res.json(users.filter((user) => user.id === parseInt(req.params.id)));
   } else {
-    res.sendStatus(400);
+    res.status(400).json({message: "Not on list"}); //Status code
+    
   }
 });
 
+
 router.post("/", (req, res) => {
   const newUser = {
-    id: uuid.v4(),
+    // id: uuid.v4(),  
+
+    id:  req.body.id,  
 
     name: req.body.name,
 
     email: req.body.email,
+
+    position: req.body.position
   };
 
   if (!newUser.name || !newUser.email) {
@@ -49,6 +55,8 @@ router.put("/:id", (req, res) => {
         user.name = updateUser.name ? updateUser.name : user.name;
 
         user.email = updateUser.email ? updateUser.email : user.email;
+
+        user.position = updateUser.position ? updateUser.position : user.position;
 
         res.json({ msg: "User updated", user });
       }

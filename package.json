@@ -4,7 +4,7 @@
   "description": "",
   "main": "firstnode.js",
   "scripts": {
-    "devStart": "nodemon routing.js"
+    "devStart": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
