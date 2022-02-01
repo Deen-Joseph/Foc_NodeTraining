@@ -1,11 +1,27 @@
-const express = require("express")
-const app = express()
+const express = require("express");
 
-app.get("/", (req,res)=>{
-    console.log("here");
-    res.status(500).json({message: "Error"})
-    res.download("routing.js")
-    // res.send("hi")
-})
+const app = express();
 
-app.listen(3000)
+
+//Midddlewares
+
+app.use(express.json());   //middleware function that parses JSON payload, if any, in the incoming API requests
+
+app.use(express.urlencoded({ extended: false }));
+ 
+
+ 
+// routers
+
+
+const routers = require('./routes/clubRouter.js')
+
+app.use("/api/clubs", routers);
+
+
+
+// port
+
+const PORT =  process.env.PORT || 8080
+
+app.listen(PORT, () => console.log(`Server is Running on Port ${PORT}`));
