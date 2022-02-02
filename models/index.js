@@ -4,8 +4,9 @@ const {Sequelize , DataTypes} = require('sequelize');
 
 const sequelize = new Sequelize(
     dbConfig.DB,
-    dbConfig.Username,
-    dbConfig.Password,{
+    dbConfig.USER,
+    dbConfig.PASSWORD,
+    {
         host:dbConfig.Hostname,
         dialect: dbConfig.dialect,        
     }     
