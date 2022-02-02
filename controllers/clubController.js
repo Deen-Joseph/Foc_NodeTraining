@@ -25,12 +25,13 @@ const addClub = async (req, res)=> {
 //  Get Clubs
 
 
-const getAllproducts = async (req,res)=>{
+const getAllclubs = async (req,res)=>{
 
     let  clubs = await Clubs.findAll({
         attributes:[  //only item given in the attributes required to get all values
             'name',
-            'league'
+            'league',
+            'trophies'
         ]
     })
     res.status(200).send(clubs)
@@ -39,7 +40,7 @@ const getAllproducts = async (req,res)=>{
 
 //get single club
 
-const getOneproducts = async (req,res)=>{
+const getOneclubs = async (req,res)=>{
 
     let id = req.params.id
     let  clubs = await Clubs.findOne({
@@ -51,7 +52,7 @@ const getOneproducts = async (req,res)=>{
 // Update
 
 
-const Updateproducts = async (req,res)=>{
+const Updateclubs = async (req,res)=>{
 
     let id = req.params.id
     
@@ -63,7 +64,7 @@ const Updateproducts = async (req,res)=>{
 
 //delete single club
 
-const Deleteproducts = async (req,res)=>{
+const Deleteclubs = async (req,res)=>{
 
     let id = req.params.id
     let  clubs = await Clubs.destroy({ where:{id:id} })
@@ -71,10 +72,10 @@ const Deleteproducts = async (req,res)=>{
 }
 
 module.exports ={
-    Deleteproducts,
-    Updateproducts,
-    getOneproducts,
-    getAllproducts,
+    Deleteclubs,
+    Updateclubs,
+    getOneclubs,
+    getAllclubs,
     addClub
 
 }
