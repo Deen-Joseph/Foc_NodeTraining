@@ -4,7 +4,7 @@
  // Main model
 
  const Clubs = db.clubs
- const Player = db.players
+//  const Player = db.players
 
 
 //  Create  Clubs
@@ -13,7 +13,7 @@ const addClub = async (req, res)=> {
 
     let info = {
         name: req.body.name,
-        league: req.body.leagues,
+        league: req.body.league,
         trophies: req.body.trophies,
         top4: req.body.top4 ? req.body.top4: false
     }
